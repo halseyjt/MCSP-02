@@ -46,6 +46,21 @@ var testingTransform = function(array) {
 };
 
 var insertionSort = function(array) {
-  // Your code goes here. Feel free to add helper functions if needed.
+  // iterate through the array
+  for (let i = 0; i < array.length; i++){
+    // create a temp  var for current element
+    let key = array[i];
+    // create a var and set equal to previous elements index
+    let j = i - 1;
+    // iterate back through array while index >= 0 and current element  > temp var
+    while (j >= 0 && array[j] > key) {
+      // set next element equal to current
+      array[j + 1] = array[i]
+      j = j - 1;
+    }
+    // set next element equal to temp
+    array[j + 1] = key;
+  }
   return array;
 };
+
