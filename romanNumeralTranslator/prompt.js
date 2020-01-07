@@ -43,7 +43,7 @@ var translateRomanNumeral = function(romanNumeral) {
     var current = DIGIT_VALUES[input[i]];
     var next = DIGIT_VALUES[input[i + 1]];
     // if currentLetter is undefined return null
-    if (current === undefined) {
+    if (!current) {
       return null;
     } else {
       // compare current and next letter to determine the greater than
