@@ -35,32 +35,45 @@
 
 // This function is to help you test, and should not be incorporated in your solution.
 // It will transform an array of numbers into an array of valid objects.
-var testingTransform = function(array) {
-  var transform = [];
+// var testingTransform = function(array) {
+//   var transform = [];
 
+//   for (var i = 0; i < array.length; i++) {
+//     transform.push({ value: array[i], i: i });
+//   }
+
+//   return transform;
+// };
+
+// var insertionSort = function(array) {
+//   // iterate through the array
+//   for (let i = 0; i < array.length; i++){
+//     // create a temp  var for current element
+//     let key = array[i];
+//     // create a var and set equal to previous elements index
+//     let j = i - 1;
+//     // iterate back through array while index >= 0 and current element  > temp var
+//     while (j >= 0 && array[j] > key) {
+//       // set next element equal to current
+//       array[j + 1] = array[i]
+//       j = j - 1;
+//     }
+//     // set next element equal to temp
+//     array[j + 1] = key;
+//   }
+//   return array;
+// };
+
+var insertionSort = function (array) {
   for (var i = 0; i < array.length; i++) {
-    transform.push({ value: array[i], i: i });
-  }
-
-  return transform;
-};
-
-var insertionSort = function(array) {
-  // iterate through the array
-  for (let i = 0; i < array.length; i++){
-    // create a temp  var for current element
-    let key = array[i];
-    // create a var and set equal to previous elements index
-    let j = i - 1;
-    // iterate back through array while index >= 0 and current element  > temp var
-    while (j >= 0 && array[j] > key) {
-      // set next element equal to current
-      array[j + 1] = array[i]
-      j = j - 1;
+    var element = array[i];
+    for (var j = i; j >= 0; j--) {
+      array[j + 1] = array[j];
     }
-    // set next element equal to temp
-    array[j + 1] = key;
+    array[j + 1] = element;
   }
   return array;
 };
 
+var sort = insertionSort([8, 2, 1, 6])
+console.log(sort);

@@ -27,5 +27,39 @@ var DIGIT_VALUES = {
 };
 
 var translateRomanNumeral = function(romanNumeral) {
-  // TODO: Implement me!
+  // Input: roman numeral as a string
+  // Output: number
+  // constraints:
+  // edge cases: return null is the input is not a string
+
+  // create a result variable
+  var result = 0
+  //  split the letters of the roman numeral
+  var input = romanNumeral.split(' ');
+
+  // iterate through the input 
+  for (var i = 0; i < input.length; i++){
+    // save current and next letters into variables
+    var current = DIGIT_VALUES[input[i]];
+    var next = DIGIT_VALUES[input[i + 1]];
+    // if currentLetter is undefined return null
+    if (current === undefined) {
+      return null;
+    } else {
+      // compare current and next letter to determine the greater than
+      if (current < next) {
+        // add nextLetter minus currentLetter to result
+        result += next - current;
+        // double increment to skip nextLetter
+        i++
+      } else {
+        // add current letter to result
+        result += current;
+      }
+    }
+  }
+// return the result
+  return result
 };
+ translateRomanNumeral('VIII');
+
