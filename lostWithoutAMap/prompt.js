@@ -3,3 +3,12 @@
 // For example:
 
 // [1, 2, 3] will return [2, 4, 6]
+
+// iterate through the array 
+
+const numbers
+
+
+
+
+

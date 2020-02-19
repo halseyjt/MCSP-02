@@ -20,3 +20,4 @@ militaryTime = (timeStr) => {
 }
 
 console.log(militaryTime('1:30 PM'));
+
