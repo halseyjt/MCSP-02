@@ -9,4 +9,13 @@ const animals = [
   { name: "Celeste", age: 1 }
 ];
 
-const animalsOlderThanFive = collection => {};
+const animalsOlderThanFive = collection => { 
+  if (collection.age > 5) {
+    return collection.name;
+  }
+};
+// const filtered = animals.filter(animalsOlderThanFive);
+// console.log(filtered)
+
+
+
